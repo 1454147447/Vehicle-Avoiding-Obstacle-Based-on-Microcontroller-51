@@ -1,0 +1,127 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/29/2020  16:21:02  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE 1.obj TO 1
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  1.obj (1)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  1 (1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            IDATA   001CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    00F9H     006DH     UNIT         ?PR?MAIN?1
+            CODE    0166H     002DH     UNIT         ?PR?_DELAY?1
+            CODE    0193H     0010H     UNIT         ?CO?1
+            CODE    01A3H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   1 (1)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?1
+
+?PR?MAIN?1                     0008H    0014H
+  +--> ?CO?1
+  +--> ?PR?_DELAY?1
+
+
+
+SYMBOL TABLE OF MODULE:  1 (1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/29/2020  16:21:02  PAGE 2
+
+
+  C:0173H         PUBLIC        _delay
+  C:00F9H         PUBLIC        main
+  C:0193H         SYMBOL        _?ix1000
+  -------         PROC          L?0023
+  -------         ENDPROC       L?0023
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0173H         LINE#         3
+  C:0173H         LINE#         4
+  C:0173H         LINE#         6
+  C:017DH         LINE#         7
+  C:0192H         LINE#         9
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        y
+  D:000AH         SYMBOL        j
+  D:000CH         SYMBOL        a
+  -------         ENDDO         
+  C:00F9H         LINE#         11
+  C:00F9H         LINE#         12
+  C:00F9H         LINE#         14
+  C:010CH         LINE#         16
+  C:0113H         LINE#         17
+  C:0113H         LINE#         18
+  C:0116H         LINE#         19
+  C:0116H         LINE#         20
+  C:011DH         LINE#         21
+  C:011DH         LINE#         22
+  C:0120H         LINE#         23
+  C:0120H         LINE#         24
+  C:0127H         LINE#         25
+  C:0127H         LINE#         26
+  C:012BH         LINE#         27
+  C:012BH         LINE#         28
+  C:012DH         LINE#         29
+  C:0130H         LINE#         30
+  C:0141H         LINE#         31
+  C:0141H         LINE#         32
+  C:0148H         LINE#         33
+  C:0148H         LINE#         34
+  C:014CH         LINE#         35
+  C:014CH         LINE#         36
+  C:0151H         LINE#         37
+  C:0154H         LINE#         38
+  C:0165H         LINE#         39
+  C:0165H         LINE#         40
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        1
+
+  -------         MODULE        ?C?COPY
+  C:00D3H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/29/2020  16:21:02  PAGE 3
+
+
+
+Program Size: data=29.0 xdata=0 code=431
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
