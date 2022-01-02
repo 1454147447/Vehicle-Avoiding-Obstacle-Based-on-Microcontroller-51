@@ -1,0 +1,72 @@
+C51 COMPILER V9.59.0.0   1                                                                 03/22/2020 15:12:48 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE 1
+OBJECT MODULE PLACED IN .\Objects\1.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE 1.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\1.lst) 
+                    -TABS(2) OBJECT(.\Objects\1.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2           void delay(unsigned int time)//延时参数
+   3           {
+   4   1       unsigned int i,j;
+   5   1       for(i=0;i<time;i++)
+   6   1       for(j=0;j<1000;j++)
+   7   1       ;
+   8   1       }
+   9          void main()
+  10          {
+  11   1         unsigned char code temp[10]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
+  12   1         unsigned int x,y;
+  13   1         while(1)
+  14   1         {
+  15   2          if(P3==0xfb)//P3.2亮  1111 1011
+  16   2               {
+  17   3                 P1=0x3f;
+  18   3                 for(y=0;y<=1;y++)
+  19   3                 {
+  20   4                  for(x=0;x<=9;x++)
+  21   4                  {
+  22   5                    P2=temp[x];
+  23   5                    delay(80);
+  24   5                  }
+  25   4                  P1=temp[y+1];
+  26   4                }
+  27   3                 P2=0x3f;//结束状态为20
+  28   3              }
+  29   2              
+  30   2               if(P3==0xf7)//P3.3亮  1111 0111
+  31   2                 {
+  32   3                   P1=0x5b;
+  33   3                   P2=0x3f;    //初始状态为20
+  34   3                   delay(80);
+  35   3                   for(y=2;y>=1;y--)
+  36   3                   {
+  37   4                    P1=temp[y-1];
+  38   4                    for(x=0;x<=9;x++)
+  39   4                    {
+  40   5                    P2=temp[9-x];
+  41   5                    delay(80);
+  42   5                    }
+  43   4                  }
+  44   3                 }
+  45   2          } 
+  46   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    232    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+C51 COMPILER V9.59.0.0   1                                                                 03/22/2020 15:12:48 PAGE 2   
+
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

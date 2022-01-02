@@ -1,0 +1,37 @@
+C51 COMPILER V9.59.0.0   2                                                                 04/19/2020 15:40:35 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE 2
+OBJECT MODULE PLACED IN .\Objects\2.obj
+COMPILER INVOKED BY: D:\Keil_v5\C51\BIN\C51.EXE 2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\2.lst) 
+                    -TABS(2) OBJECT(.\Objects\2.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          void main(void)
+   3          {
+   4   1      SCON=0x50;//串行口通信方式1，接收允许
+   5   1      PCON=0x00;//SMOD=0
+   6   1      TMOD=0x20;//定时器T1 方式2
+   7   1      TH1=0xF4; //波特率为2400bit/s，时钟频率11.0592MHz的初值
+   8   1      TL1=0xF4;
+   9   1      TR1=1; //启动T1定时
+  10   1      while(RI==0);// 接收中RI为0，直到接收完毕RI硬件置1
+  11   1      RI=0; //软件清0，开始下一轮接收
+  12   1      P1=SBUF; //接收到的数据由缓冲器送给P1
+  13   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     26    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,125 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    03/22/2020  15:12:49  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\1.obj TO .\Objects\1 PRINT (.\Listings\1.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\1.obj (1)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\1 (1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0004H     UNIT         _DATA_GROUP_
+            IDATA   000CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00BEH     UNIT         ?PR?MAIN?1
+            CODE    00C1H     002AH     UNIT         ?PR?_DELAY?1
+            CODE    00EBH     000CH     UNIT         ?C_C51STARTUP
+            CODE    00F7H     000AH     UNIT         ?CO?1
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\1 (1)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?1
+
+?PR?MAIN?1                     0008H    0004H
+  +--> ?CO?1
+  +--> ?PR?_DELAY?1
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\1 (1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        1
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:00CBH         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/22/2020  15:12:49  PAGE 2
+
+
+  C:0003H         PUBLIC        main
+  -------         PROC          L?0031
+  -------         ENDPROC       L?0031
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:00CBH         LINE#         2
+  C:00CBH         LINE#         3
+  C:00CBH         LINE#         5
+  C:00D5H         LINE#         6
+  C:00EAH         LINE#         8
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  C:00F7H         SYMBOL        temp
+  D:0008H         SYMBOL        x
+  D:000AH         SYMBOL        y
+  -------         ENDDO         
+  C:0003H         LINE#         9
+  C:0003H         LINE#         10
+  C:0003H         LINE#         13
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:000AH         LINE#         16
+  C:000AH         LINE#         17
+  C:000DH         LINE#         18
+  C:0011H         LINE#         19
+  C:0011H         LINE#         20
+  C:0016H         LINE#         21
+  C:0016H         LINE#         22
+  C:0020H         LINE#         23
+  C:0023H         LINE#         24
+  C:0034H         LINE#         25
+  C:0044H         LINE#         26
+  C:0055H         LINE#         27
+  C:0058H         LINE#         28
+  C:0058H         LINE#         30
+  C:005FH         LINE#         31
+  C:005FH         LINE#         32
+  C:0062H         LINE#         33
+  C:0065H         LINE#         34
+  C:006BH         LINE#         35
+  C:007CH         LINE#         36
+  C:007CH         LINE#         37
+  C:008CH         LINE#         38
+  C:0091H         LINE#         39
+  C:0091H         LINE#         40
+  C:00A3H         LINE#         41
+  C:00A6H         LINE#         42
+  C:00B7H         LINE#         43
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        1
+
+Program Size: data=13.0 xdata=0 code=257
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  03/22/2020  15:12:49  PAGE 3
+
+
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
